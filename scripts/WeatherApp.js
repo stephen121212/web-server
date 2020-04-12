@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const fs  = require('fs')
 const hbs = require('hbs')
 const request = require('postman-request');
 
@@ -20,7 +21,7 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'MyWeatherPal',
-        name: 'Stephen King/Darren White'
+        name: 'Stephen King'
     })
 })
 

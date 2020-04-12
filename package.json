@@ -9,10 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browserify": "^16.5.1",
+    "countrynames": "^0.1.1",
     "express": "^4.16.4",
+    "fs": "0.0.1-security",
     "hbs": "^4.1.1",
+    "path": "^0.12.7",
     "postman-request": "^2.88.1-postman.22",
     "readline-sync": "^1.4.10",
-    "requirejs": "^2.3.6"
+    "requirejs": "^2.3.6",
+    "uniqid": "^5.2.0"
   }
 }
