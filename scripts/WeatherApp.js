@@ -42,10 +42,14 @@ app.get('/weather', (req, res) => {
                 res.send({
                     nameOfCity: weatherObject.name,
                     countryOfCity: weatherObject.sys.country,
+                    Pressure: weatherObject.main.pressure + ' HPA',
+                    visibility: ((weatherObject.visibility*1.6)/1000).toFixed(2) + ' KM',
+                    windSpeed: weatherObject.wind.speed.toFixed(2) + ' M/H',
                     weatherCurrently: weatherObject.weather[0].main,
                     weatherDescription: weatherObject.weather[0].description,
                     weatherHumidity: weatherObject.main.humidity + "%",
-                    temperatureValue: (weatherObject.main.temp - 273.15).toFixed(2) + "°C"
+                    temperatureValue: (weatherObject.main.temp - 273.15).toFixed(2) + "°C",
+                    temperatureFeelsLike: (weatherObject.main.feels_like - 273.15).toFixed(2) + "°C"
                 })
         } else {
             res.send({

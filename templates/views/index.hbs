@@ -54,7 +54,7 @@
                             <!-- Countries known to be subject to general US embargo are commented out by default. -->
                             <!-- The value attribute is populated with ISO country code, and value is int'l calling code. -->
 
-                                <option value="US">select> USA</option>
+                                <option value="US">USA</option>
                                 <option value="GB">UK</option>
                                 <option disabled="disabled">Other Countries</option>
                                 <option value="DZ">Algeria</option>
@@ -321,7 +321,14 @@
 					<label for="ac-1" class="grid1"> More Information:</label>
 					<article class="ac-small">
 						<div class="wthree-grids">
-							<div class="wthree-grids-row">
+                            <div class="wthree-grids-row">
+								<ul>
+									<li>Location: </li>
+									<li id = "locationInformation" class="wthree-temp"></li> 
+								</ul> 
+								<div class="clear"> </div>
+							</div>
+                            <div class="wthree-grids-row">
 								<ul class="top">
 									<li>Current Weather: </li>
 									<li id="weatherCurrently" class="wthree-temp"></li> 
@@ -339,6 +346,27 @@
 								<ul>
 									<li>Humidity: </li>
 									<li id = "humidity" class="wthree-temp"></li> 
+								</ul> 
+								<div class="clear"> </div>
+							</div>
+                            	<div class="wthree-grids-row">
+								<ul>
+									<li>Pressure: </li>
+									<li id = "pressure" class="wthree-temp"></li> 
+								</ul> 
+								<div class="clear"> </div>
+							</div>
+                            <div class="wthree-grids-row">
+								<ul>
+									<li>Visibility: </li>
+									<li id = "visibility" class="wthree-temp"></li> 
+								</ul> 
+								<div class="clear"> </div>
+							</div>
+                            <div class="wthree-grids-row">
+								<ul>
+									<li>Wind Speed: </li>
+									<li id = "windSpeed" class="wthree-temp"></li> 
 								</ul> 
 								<div class="clear"> </div>
 							</div>

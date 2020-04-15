@@ -9,6 +9,10 @@ const currentWeather = document.getElementById('weatherCurrently')
 const weatherDescription = document.getElementById('descriptionOfWeather')
 const humidity = document.getElementById('humidity')
 const weatherImage = document.getElementById("weatherImage")
+const windSpeed = document.getElementById("windSpeed")
+const visibility = document.getElementById("visibility")
+const pressure = document.getElementById("pressure")
+const locationInformation = document.getElementById("locationInformation")
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -21,6 +25,7 @@ weatherForm.addEventListener('submit', (e) => {
         if(data.error){
             Weatherlocation.innerHTML = data.error
         }
+            console.log(data)
             weatherlocation.innerHTML = data.nameOfCity + ', ' + data.countryOfCity
             degrees.innerHTML = data.temperatureValue 
             todayLocation.innerHTML = data.nameOfCity + ', ' + data.countryOfCity
@@ -28,6 +33,10 @@ weatherForm.addEventListener('submit', (e) => {
             currentWeather.innerHTML = data.weatherCurrently
             weatherDescription.innerHTML = data.weatherDescription
             humidity.innerHTML = data.weatherHumidity
+            pressure.innerHTML = data.Pressure
+            locationInformation.innerHTML = data.nameOfCity
+            windSpeed.innerHTML = data.windSpeed
+            visibility.innerHTML = data.visibility
 
             switch(data.weatherDescription){
                 case "light rain": weatherImage.src = "/img/Rain.png"
@@ -47,6 +56,8 @@ weatherForm.addEventListener('submit', (e) => {
                 case "snow": weatherImage.src = "/img/Snow.png"
                 break
                 case "sky is clear": weatherImage.src = "/img/Sunny.png"
+                break
+                case "clear sky": weatherImage.src = "/img/Sunny.png"
                 break
                 default: weatherImage.src = "/img/ScatteredClouds.png"
             }
