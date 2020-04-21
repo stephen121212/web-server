@@ -20,7 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
     const cityName = city.value
     const countryCode = country.options[country.selectedIndex].value
     
-    fetch('http://localhost:3000/weather?search=' + cityName + ',' + countryCode).then((response) => {
+    fetch('/weather?search=' + cityName + ',' + countryCode).then((response) => {
     response.json().then((data) => {
         if(data.error){
             Weatherlocation.innerHTML = data.error
