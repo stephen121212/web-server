@@ -17,7 +17,7 @@ const locationInformation = document.getElementById("locationInformation")
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     
-    const cityName = city.value
+    const cityName = (city.value).trim()
     const countryCode = country.options[country.selectedIndex].value
     
     fetch('/weather?search=' + cityName + ',' + countryCode).then((response) => {

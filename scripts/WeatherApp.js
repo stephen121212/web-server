@@ -49,7 +49,9 @@ app.get('/weather', (req, res) => {
                     weatherDescription: weatherObject.weather[0].description,
                     weatherHumidity: weatherObject.main.humidity + "%",
                     temperatureValue: (weatherObject.main.temp - 273.15).toFixed(2) + "°C",
-                    temperatureFeelsLike: (weatherObject.main.feels_like - 273.15).toFixed(2) + "°C"
+                    temperatureFeelsLike: (weatherObject.main.feels_like - 273.15).toFixed(2) + "°C",
+                    latitude: weatherObject.coord.lat,
+                    longitude: weatherObject.coord.lon
                 })
         } else {
             res.send({
