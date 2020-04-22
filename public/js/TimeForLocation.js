@@ -10,13 +10,13 @@ weatherFormT.addEventListener('submit', (e) => {
     const countryCode = countryT.options[countryT.selectedIndex].value
     
     fetch('/time?cityName=' + cityName + '&countryCode=' + countryCode).then((response) => {
-    response.json().then((data) => {
+        response.json().then((data) => {
         if(data.error){
             textForTime.innerHTML = data.error
         }
             textForTime.innerHTML = data.formattedTime
         })
-    }, 1000)
+    })
 })
 
 
