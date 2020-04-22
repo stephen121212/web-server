@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
 const request = require('postman-request');
+var timezonedb = require('timezonedb-node')('VUPRHLJ0DSQP');
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -49,9 +50,32 @@ app.get('/weather', (req, res) => {
                     weatherDescription: weatherObject.weather[0].description,
                     weatherHumidity: weatherObject.main.humidity + "%",
                     temperatureValue: (weatherObject.main.temp - 273.15).toFixed(2) + "°C",
-                    temperatureFeelsLike: (weatherObject.main.feels_like - 273.15).toFixed(2) + "°C",
-                    latitude: weatherObject.coord.lat,
-                    longitude: weatherObject.coord.lon
+                    temperatureFeelsLike: (weatherObject.main.feels_like - 273.15).toFixed(2) + "°C"
+                })
+        } else {
+            res.send({
+                error: "Invalid Location has been inserted"
+            })
+        } 
+    })
+})
+
+app.get('/time', (req, res) => {
+    const search = '&city=' + req.query.cityName + '&country=' + req.query.countryCode
+    if(!search){
+        return res.send({
+            error: 'You must provide a search term'
+        })
+    }
+
+    var url = 'http://vip.timezonedb.com/v2.1/get-time-zone?key=VUPRHLJ0DSQP&format=json&by=city' + search
+    request(url, function (error, response, body) {
+        if(error){
+            return res.send({error})
+          } else if(response.statusCode === 200) {
+                const timeObject = JSON.parse(body)
+                res.send({
+                    formattedTime: timeObject.zones[0].formatted
                 })
         } else {
             res.send({

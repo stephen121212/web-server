@@ -40,6 +40,32 @@ h1 {
 .main {
     padding: 2em 0 0;
 }
+
+.button1{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+.button1:hover{
+    color:#000000;
+    background-color:#FFFFFF;
+}
+@media all and (max-width:30em){
+.button1{
+    display:block;
+    margin:0.4em auto;
+    }
+}
+
 .main h2 {
     font-size: 1.2em;
     color: #00bbb4;
@@ -121,7 +147,7 @@ button {
 /*-- //agileits-top --*/
 .w3ls-bottom {
     background: url('/img/a.png')no-repeat -1px 0px;
-    background-size: 103%;
+    background-size: 130%;
     padding: 3em 1em 0;
     margin-top: -4em;
 }

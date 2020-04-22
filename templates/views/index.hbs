@@ -21,9 +21,9 @@
 		});
 	}); 
 </script> 
-<!-- //js -->
+
 </head>
-<body onload="startTime()">
+<body>
 	<!-- main -->
 	<div class="main">
 		<h1>MyWeatherPal Weather Report</h1>
@@ -36,7 +36,7 @@
 					<h3 id = "degrees"><sup class="degree">°</sup><span>C</span></h3>
 					<p id = "location"></p>
                         <form>
-                            <input id = "cityName" placeholder="Ennis">
+                            <input id = "cityName" placeholder="Location">
                             <p></p>
                             <select id = 'countryCode'>
                             <!-- Countries often selected by users can be moved to the top of the list. -->
@@ -263,24 +263,6 @@
                         </form>
 						<div class="date-time">
 								<div id="txt"></div>
-								<div class="date">
-									<!-- Date-JavaScript -->
-									<script type="text/javascript">
-									var mydate=new Date()
-									var year=mydate.getYear()
-									if(year<1000)
-									year+=1900
-									var day=mydate.getDay()
-									var month=mydate.getMonth()
-									var daym=mydate.getDate()
-									if(daym<10)
-									daym="0"+daym
-									var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
-									var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
-									document.write(""+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"")
-									</script>
-									<!-- //Date-JavaScript -->
-								</div>
 							<div class="clear"></div>
 						</div>  
 				</div>
@@ -365,25 +347,7 @@
 	<div class="copyright">
 		<p> Created by {{name}}</p>
 	</div>
-
-	<script>
-		function startTime() {
-			var today = new Date();
-			var h = today.getHours();
-			var m = today.getMinutes();
-			var s = today.getSeconds();
-			m = checkTime(m);
-			s = checkTime(s);
-			document.getElementById('txt').innerHTML =
-			h + ":" + m + ":" + s;
-			var t = setTimeout(startTime, 500);
-			}
-			function checkTime(i) {
-			if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
-			return i;
-		}
-	</script>
-	<script src = "/js/ClientSideWeatherApp.js"></script>
     <script src = "/js/TimeForLocation.js"></script>
+	<script src = "/js/ClientSideWeatherApp.js"></script>
 </body>
 </html>

@@ -18,6 +18,8 @@
     "postman-request": "^2.88.1-postman.22",
     "readline-sync": "^1.4.10",
     "requirejs": "^2.3.6",
+    "timezonedb": "^1.0.2",
+    "timezonedb-node": "^1.0.7",
     "uniqid": "^5.2.0"
   }
 }
