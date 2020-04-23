@@ -94,7 +94,7 @@ h1 {
     height: 139px;
     width: 150px;
     position: absolute;
-    top: -15%;
+    top: -20%;
     left: -1%;
 }
 .agileinfo-top-row h3 {
@@ -117,10 +117,19 @@ h1 {
 .agileinfo-top-time {
     padding: 2.5em 0 0;
 }
+
+div#timetxt {
+    color: white;
+    font-size: 1em;
+    font-weight: 100;
+    letter-spacing: 3px;
+	font-family: 'Lora', serif;
+}
+
 div#txt {
     color: #fff;
-    font-size: 2em;
-    font-weight: 200;
+    font-size: 1em;
+    font-weight: 100;
     letter-spacing: 3px;
 	font-family: 'Lora', serif;
 }

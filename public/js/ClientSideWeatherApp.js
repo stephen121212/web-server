@@ -13,6 +13,8 @@ const windSpeed = document.getElementById("windSpeed")
 const visibility = document.getElementById("visibility")
 const pressure = document.getElementById("pressure")
 const locationInformation = document.getElementById("locationInformation")
+const textForTime = document.getElementById("txt")
+const localCityTime = document.getElementById('timetxt')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -63,5 +65,24 @@ weatherForm.addEventListener('submit', (e) => {
             }
         })
     })
+
+    const getTimeFetch = async () => {
+        try {
+            localCityTime.innerHTML = 'City Local Time:'
+            const response = await fetch('/time?cityName=' + cityName + '&countryCode=' + countryCode)
+            if (response.status === 200) {
+                const data = await response.json();
+                console.log(data); 
+                textForTime.innerHTML = data.formattedTime              
+            } else {
+                console.log("Not a 200");
+            }
+        } catch (err) {
+            console.log(err);
+        } finally {
+            setTimeout(getTimeFetch , 500);
+        }
+    }
+    getTimeFetch()
 })
 
