@@ -85,4 +85,3 @@ weatherForm.addEventListener('submit', (e) => {
     }
     getTimeFetch()
 })
-
